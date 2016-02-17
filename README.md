@@ -11,12 +11,18 @@ Alternatively run the unit test runTheServerFor10Minutes. and the service will b
 
 # Usage and Examples. 
 send PUT command to http://localhost:8889/participant/1234 
+
 with json content [{"key":"key1","value":"value1","expiry":0}, {"key":"key2","value":"value2","expiry":0}]
+
 will create/override an entity 1234, with metadata key1 and key2. 
 
 calling the PUT with query param mode=merge (http://localhost:8889/participant/1234?mode=merge)  
+
 with json content [{"key":"key2","value":"newValue2","expiry":0}, {"key":"key3","value":"value3","expiry":0}]
-will merge the keys into entity 1234 instead of totally override all entity's content. (for instance running the two commands above will result to have entity 1234 having values (key1:value1, key2:newValue2,key3:value3)
+
+will merge the keys into entity 1234 instead of totally override all entity's content. 
+(for instance running the two commands above will result to have entity 1234 having values (key1:value1, key2:newValue2,key3:value3)
+
 
 send DELETE command to http://localhost:8889/participant/1234 to delete the entity 1234.
 
